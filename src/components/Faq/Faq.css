@@ -1,0 +1,20 @@
+summary {
+    display: block; /* Hace que el summary sea un bloque completo */
+    cursor: pointer; /* Para que siga siendo clicable */
+}
+
+summary::-webkit-details-marker {
+    display: none; /* Oculta la flecha en navegadores basados en WebKit (Chrome, Safari, etc.) */
+}
+
+summary::-moz-list-bullet {
+    display: none; /* Oculta la flecha en Firefox */
+}
+
+details[open] summary svg {
+    transform: rotate(180deg);
+}
+
+details[open] {
+    background-color: rgba(0, 0, 0, 0.04);
+}
