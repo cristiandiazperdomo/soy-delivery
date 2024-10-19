@@ -35,13 +35,13 @@ export const Home = () => {
                     <Header />
                     <h2 className="flex md:hidden text-2xl flex flex-col font-bold px-4 text-center sm:mt-2 md:mt-12">
                         <div>
-                            <span className="text-orange-400 lg:text-orange-500">
+                            <span className="text-primary lg:text-primary">
                                 Rastrea tus envíos
                             </span>{" "}
                             y
                         </div>
                         <div>
-                            <span className="text-orange-400 lg:text-orange-500">
+                            <span className="text-primary lg:text-primary">
                                 {" "}
                                 optimiza la logística
                             </span>{" "}
@@ -95,7 +95,7 @@ export const Home = () => {
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 container mx-auto min-h-screen px-4">
                 <div className="py-8 max-w-screen-xl sm:py-16">
                     <div className="">
-                        <p className="space-x-1.5 mb-3 text-xs tracking-tight font-bold text-orange-500">
+                        <p className="space-x-1.5 mb-3 text-xs tracking-tight font-bold text-primary">
                             <span>¿ P O R Q U É </span>
                             <span>E L E G I R</span>
                             <span>S O Y</span>
@@ -163,7 +163,7 @@ export const Home = () => {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="icon icon-tabler icons-tabler-outline icon-tabler-clock-hour-4 text-orange-500 min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
+                            className="icon icon-tabler icons-tabler-outline icon-tabler-clock-hour-4 text-primary min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -206,7 +206,7 @@ export const Home = () => {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="icon icon-tabler icons-tabler-outline icon-tabler-package text-orange-500 min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
+                            className="icon icon-tabler icons-tabler-outline icon-tabler-package text-primary min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" />
@@ -251,7 +251,7 @@ export const Home = () => {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="icon icon-tabler icons-tabler-outline icon-tabler-map-2 text-orange-500 min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
+                            className="icon icon-tabler icons-tabler-outline icon-tabler-map-2 text-primary min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
@@ -294,7 +294,7 @@ export const Home = () => {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="icon icon-tabler icons-tabler-outline icon-tabler-forklift text-orange-500 min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
+                            className="icon icon-tabler icons-tabler-outline icon-tabler-forklift text-primary min-w-[48px] w-[48px] min-h-[48px] h-[48px]"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M5 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />

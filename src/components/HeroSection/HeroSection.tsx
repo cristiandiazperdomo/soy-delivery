@@ -9,13 +9,13 @@ export const HeroSection = () => {
                         <div className="text-center space-y-0 sm:space-y-1 xl:space-y-4">
                             <h2 className="hidden md:flex text-2xl sm:text-4xl lg:text-5xl flex flex-col font-bold">
                                 <div>
-                                    <span className="text-orange-400 lg:text-orange-500">
+                                    <span className="text-primary lg:text-primary">
                                         Rastrea tus envíos
                                     </span>{" "}
                                     y
                                 </div>
                                 <div>
-                                    <span className="text-orange-400 lg:text-orange-500">
+                                    <span className="text-primary lg:text-primary">
                                         {" "}
                                         optimiza la logística
                                     </span>{" "}
@@ -49,7 +49,7 @@ export const HeroSection = () => {
                                         />
 
                                         <button
-                                            className="text-sm flex items-center space-x-0.5 absolute right-2 rounded-md ml-2 bg-orange-500 pl-3 pr-1 py-2 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg hover:bg-orange-600 focus:bg-orange-700 focus:shadow-none active:bg-orange-700 hover:bg-orange-600 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                            className="text-sm flex items-center space-x-0.5 absolute right-2 rounded-md ml-2 bg-primary pl-3 pr-1 py-2 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg hover:bg-primary focus:bg-primary focus:shadow-none active:bg-primary hover:bg-primary active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                             type="button"
                                         >
                                             <span className="font-semibold">
@@ -125,10 +125,10 @@ export const HeroSection = () => {
                 </div>
             </div>
             <div className="grid grid-cols-2 justify-center gap-x-2 sm:gap-x-4 text-white mt-4 sm:mt-0 px-2 sm:px-0">
-                <button className="transition-all duration-50 bg-orange-500 hover:bg-orange-600 rounded-full px-0 sm:px-4 py-3 sm:py-2 text-xs sm:text-sm w-[150px] sm:w-[192px] justify-self-end">
+                <button className="transition-all duration-50 bg-primary hover:bg-primary rounded-full px-0 sm:px-4 py-3 sm:py-2 text-xs sm:text-sm w-[150px] sm:w-[192px] justify-self-end">
                     Únete como cliente
                 </button>
-                <button className="transition-all duration-50 border-2 border-orange-600 rounded-full px-0 sm:px-4 py-3 sm:py-2 text-xs sm:text-sm hover:bg-opacity-30 text-gray-800 md:text-white justify-self-start w-[150px] sm:w-[192px]">
+                <button className="transition-all duration-50 border-2 border-primary rounded-full px-0 sm:px-4 py-3 sm:py-2 text-xs sm:text-sm hover:bg-opacity-30 text-gray-800 md:text-white justify-self-start w-[150px] sm:w-[192px]">
                     Únete como conductor
                 </button>
             </div>

@@ -1,21 +1,25 @@
 import React, {ChangeEventHandler, FormEvent, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
-import completeLogo from "../../assets/logosoydelivery.webp";
 import packing from "../../assets/packing.mp4";
 import {AuthVideoHover} from "../../components/AuthVideoHover/AuthVideoHover";
+import {useAppDispatch} from "../../hooks/reduxTypes";
+import {loginAction} from "../../redux/actions/userInfo";
 
-interface IFormData {
+export interface LoginFormData {
     email: string;
     password: string;
     [key: string]: string;
 }
 
 export const Login = () => {
-    const [formData, setFormData] = useState<IFormData>({
+    const [formData, setFormData] = useState<LoginFormData>({
         email: "",
         password: "",
     });
+
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const getFormData: ChangeEventHandler<HTMLInputElement> = (e) => {
         const {id, value} = e.target;
@@ -28,16 +32,7 @@ export const Login = () => {
 
     const login = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        await fetch("http://localhost:3000/api/auth/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                email: formData.email,
-                password: formData.password,
-            }),
-        });
+        dispatch(loginAction(formData, navigate));
     };
 
     return (
@@ -108,7 +103,6 @@ export const Login = () => {
                                             aria-describedby="remember"
                                             type="checkbox"
                                             className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
-                                            required={true}
                                         />
                                     </div>
                                     <div className="ml-2 sm:ml-3 text-xs sm:text-sm">

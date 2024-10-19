@@ -111,7 +111,7 @@ export const Footer = () => {
                             ¿Tienes un paquete que entregar?
                         </p>
                         <button
-                            className="text-sm flex items-center space-x-0.5 rounded-md ml-2 bg-orange-400 px-2 md:px-5 py-3 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg hover:bg-orange-600 focus:bg-orange-700 focus:shadow-none active:bg-orange-700 hover:bg-orange-600 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            className="text-sm flex items-center space-x-0.5 rounded-md ml-2 bg-primary px-2 md:px-5 py-3 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg hover:bg-primary/90 focus:shadow-none active:bg-primary hover:bg-primary active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
                         >
                             <span className="font-semibold">Contactanos</span>

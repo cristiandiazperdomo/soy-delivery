@@ -1,11 +1,19 @@
 import React, {useEffect, useState} from "react";
-import logo from "../../assets/logo.webp";
 import {Link, useLocation} from "react-router-dom";
 import {SideBar} from "../SideBar/SideBar";
+import {useAppDispatch, useAppSelector} from "../../hooks/reduxTypes";
+
+import {UserDropdown} from "../UserDropdown/UserDropdown";
+
+import logo from "../../assets/logo.webp";
+import {getUserFromTokenAction} from "../../redux/actions/userInfo";
 
 export const Header = () => {
     const [showSideBar, setShowSideBar] = useState(false);
     const [lightHover, setLightHover] = useState(false);
+    const dispatch = useAppDispatch();
+
+    let {email} = useAppSelector((state) => state.user.info?.data);
 
     const {pathname} = useLocation();
 
@@ -15,9 +23,17 @@ export const Header = () => {
         if (pathname !== "/") setLightHover(true);
     }, [pathname]);
 
+    useEffect(() => {
+        const token = localStorage.getItem("sd_token");
+
+        if (token && !email) {
+            dispatch(getUserFromTokenAction(token));
+        }
+    }, []);
+
     return (
         <header
-            className={`relative h-[80px] lg:px-4 ${
+            className={`relative h-[80px] px-4 ${
                 pathname === "/"
                     ? "md:border-b border-gray-500"
                     : "border-b-2 md:border-b border-gray-200 md:border-gray-500"
@@ -25,7 +41,7 @@ export const Header = () => {
         >
             <SideBar showSideBar={showSideBar} pathname={pathname} />
             <div className="h-full w-full flex items-center justify-between">
-                <div className="flex items-center space-x-16 w-[170px] lg:w-[245px]">
+                <div className="flex items-center space-x-16 w-[170px] lg:w-[180px]">
                     <Link to="/" className="flex items-center space-x-2">
                         <img src={logo} alt="logo" className="h-[40px]" />
                         <h1 className="font-extrabold text-xl lg:text-2xl">
@@ -33,24 +49,7 @@ export const Header = () => {
                         </h1>
                     </Link>
                 </div>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="36"
-                    height="36"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2 flex md:hidden"
-                    onClick={() => setShowSideBar(!showSideBar)}
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 6l16 0" />
-                    <path d="M4 12l16 0" />
-                    <path d="M4 18l16 0" />
-                </svg>
+
                 <ul className="hidden md:flex items-center space-x-4">
                     <li>
                         <Link
@@ -61,7 +60,7 @@ export const Header = () => {
                                     : "hover:text-gray-200"
                             } ${
                                 pathname === "/"
-                                    ? "text-orange-600 hover:text-orange-600"
+                                    ? "text-primary hover:text-primary"
                                     : ""
                             }`}
                         >
@@ -94,7 +93,7 @@ export const Header = () => {
                                     : "hover:text-gray-200"
                             } ${
                                 pathname === "/sobre-nosotros"
-                                    ? "text-orange-600 hover:text-orange-600"
+                                    ? "text-primary hover:text-primary"
                                     : ""
                             } text-sm  cursor-pointer flex items-center space-x-0`}
                         >
@@ -128,7 +127,7 @@ export const Header = () => {
                                     : "hover:text-gray-200"
                             } ${
                                 pathname === "/servicios"
-                                    ? "text-orange-600 hover:text-orange-600"
+                                    ? "text-primary hover:text-primary"
                                     : ""
                             }
                           text-sm  cursor-pointer flex items-center space-x-0`}
@@ -214,20 +213,45 @@ export const Header = () => {
                         </div>
                     </li>
                 </ul>
-                <div className="hidden md:flex justify-end w-[190px] lg:w-[245px] space-x-2 lg:space-x-4">
-                    <Link
-                        to="/entrar"
-                        className="text-sm rounded-full p-2 lg:p-2.5"
+                <div className="flex flex-row-reverse md:flex-row items-center justify-end">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="36"
+                        height="36"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2 flex md:hidden ml-4"
+                        onClick={() => setShowSideBar(!showSideBar)}
                     >
-                        Ingresar
-                    </Link>
-                    <Link
-                        to="/registrarse"
-                        className="text-sm rounded-full p-2 lg:p-2.5 text-white"
-                        style={{background: "rgb(234, 113, 46)"}}
-                    >
-                        Crear Cuenta
-                    </Link>
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 6l16 0" />
+                        <path d="M4 12l16 0" />
+                        <path d="M4 18l16 0" />
+                    </svg>
+                    {email?.length > 0 ? (
+                        <div className="flex justify-end lg:w-[180px]">
+                            <UserDropdown emailHeader={email} />
+                        </div>
+                    ) : (
+                        <div className="hidden md:flex justify-end lg:w-[245px] space-x-2 lg:space-x-4">
+                            <Link
+                                to="/entrar"
+                                className="text-sm rounded-full p-2 lg:py-2.5"
+                            >
+                                Ingresar
+                            </Link>
+                            <Link
+                                to="/registrarse"
+                                className="text-sm rounded-full p-2 lg:p-2.5 lg:px-4 bg-primary hover:bg-primary/90 text-white"
+                            >
+                                Crear Cuenta
+                            </Link>
+                        </div>
+                    )}
                 </div>
             </div>
         </header>

@@ -3,14 +3,14 @@ import eltunel from "../../assets/eltunel.webp";
 
 export const Testimonies = () => {
     return (
-        <section className="w-full flex flex-col items-center gap-x-4 container mx-auto text-gray-700 space-y-12 pb-20 px-4 z-10">
+        <section className="w-full gap-x-4 container mx-auto text-gray-700 space-y-12 pb-20 px-4 z-10 pt-12 lg:pt-20 mt-8 lg:mt-0">
             <div className="text-center space-y-12">
                 <div className="flex items-center flex-col space-y-4">
                     <div className="relative">
                         <p className="text-gray-800 text-2xl font-bold py-0.5 rounded">
                             Lee lo que nuestros clientes dicen
                         </p>
-                        <div className="hidden sm:flex bg-orange-200 w-full h-[12px] -mt-4"></div>
+                        <div className="hidden sm:flex bg-primary/20 w-full h-[12px] -mt-4"></div>
                     </div>
                     <span className="w-full p-2 rounded-full text-gray-400 font-bold">
                         Ellos comparten su satisfacción y nosotros transformamos
@@ -106,7 +106,7 @@ export const Testimonies = () => {
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
-                                    className="icon icon-tabler icons-tabler-filled icon-tabler-star w-[20px] h-[20px] text-orange-400"
+                                    className="icon icon-tabler icons-tabler-filled icon-tabler-star w-[20px] h-[20px] text-primary"
                                 >
                                     <path
                                         stroke="none"

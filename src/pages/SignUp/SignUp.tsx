@@ -1,7 +1,9 @@
 import React, {ChangeEventHandler, FormEventHandler, useState} from "react";
 import pouring from "../../assets/pouring.mp4";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {AuthVideoHover} from "../../components/AuthVideoHover/AuthVideoHover";
+import {useAppDispatch} from "../../hooks/reduxTypes";
+import {registerAction} from "../../redux/actions/userInfo";
 
 interface IFormData {
     name: string;
@@ -21,6 +23,10 @@ export const SignUp = () => {
         confirmPassword: "",
     });
 
+    const navigate = useNavigate();
+
+    const dispatch = useAppDispatch();
+
     const getFormData: ChangeEventHandler<
         HTMLInputElement | HTMLSelectElement
     > = (e) => {
@@ -36,15 +42,7 @@ export const SignUp = () => {
         e.preventDefault();
         const {confirmPassword, ...rest} = formData;
 
-        const data = await fetch("http://localhost:3000/api/auth/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(rest),
-        });
-
-        console.log(data);
+        dispatch(registerAction(rest, navigate));
     };
 
     return (
