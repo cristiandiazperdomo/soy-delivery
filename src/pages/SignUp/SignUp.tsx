@@ -5,7 +5,7 @@ import {AuthVideoHover} from "../../components/AuthVideoHover/AuthVideoHover";
 import {useAppDispatch} from "../../hooks/reduxTypes";
 import {registerAction} from "../../redux/actions/userInfo";
 
-interface IFormData {
+interface RegisterFormData {
     name: string;
     email: string;
     role: string;
@@ -15,7 +15,7 @@ interface IFormData {
 }
 
 export const SignUp = () => {
-    const [formData, setFormData] = useState<IFormData>({
+    const [formData, setFormData] = useState<RegisterFormData>({
         name: "",
         email: "",
         role: "",
@@ -38,7 +38,7 @@ export const SignUp = () => {
         });
     };
 
-    const register: FormEventHandler<HTMLFormElement> = async (e) => {
+    const register: FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
         const {confirmPassword, ...rest} = formData;
 
@@ -108,7 +108,10 @@ export const SignUp = () => {
                                         <option value="dealer" className="p-4">
                                             CONDUCTOR
                                         </option>
-                                        <option value="client" className="p-4">
+                                        <option
+                                            value="business"
+                                            className="p-4"
+                                        >
                                             CLIENTE
                                         </option>
                                     </select>
@@ -169,7 +172,6 @@ export const SignUp = () => {
                                 <div className="flex items-center h-5">
                                     <input
                                         id="terms"
-                                        aria-describedby="terms"
                                         type="checkbox"
                                         className="w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-primary-300"
                                         required={true}

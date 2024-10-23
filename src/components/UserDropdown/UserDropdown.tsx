@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import userProfile from "../../assets/profile.webp";
 import {getUserFromTokenAction} from "../../redux/actions/userInfo";
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxTypes";
+import {Notifications} from "../Notifications/Notifications";
 
 interface UserDropdownInterface {
     emailHeader: string | null;
@@ -22,10 +23,13 @@ export const UserDropdown = ({emailHeader}: UserDropdownInterface) => {
         }
     }, []);
 
-    console.log(email);
-
     return (
-        <div className="relative z-50">
+        <div className="relative flex items-center z-40 space-x-6">
+            <div className="relative">
+                <Notifications />
+            </div>
+            <div className="border border-gray-50 border-l h-[40px]"></div>
+
             <button
                 id="dropdownUserAvatarButton"
                 className="flex items-center text-sm md:me-0 group"

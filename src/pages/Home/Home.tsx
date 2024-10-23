@@ -10,15 +10,15 @@ import {TrustUs} from "../../components/TrustUs/TrustUs";
 
 import {Testimonies} from "../../components/Testimonies/Testimonies";
 
-alert(`Vistas disponibles hasta el momento: 
-    Inicio: /,
-    Sobre Nosotros: /sobre-nosotros *(nueva) 
-    Servicios: /servicios *(nueva - casi lista) 
+// alert(`Vistas disponibles hasta el momento: 
+//     Inicio: /,
+//     Sobre Nosotros: /sobre-nosotros *(nueva) 
+//     Servicios: /servicios *(nueva - casi lista) 
 
 
-    Sientanse libres de usar este diseño 
-    esten interesados en mi perfil o no
-`);
+//     Sientanse libres de usar este diseño 
+//     esten interesados en mi perfil o no
+// `);
 
 export const Home = () => {
     return (

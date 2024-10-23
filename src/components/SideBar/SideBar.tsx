@@ -10,11 +10,9 @@ interface SideBarProps {
 export const SideBar = ({showSideBar, pathname}: SideBarProps) => {
     return (
         <aside
-            id="default-sidebar"
             className={`fixed top-0 left-0 z-50 w-64 text-white h-screen transition-transform ${
                 showSideBar ? "translate-x-0" : "-translate-x-full"
             }`}
-            aria-label="Sidebar"
         >
             <div className="h-full px-3 pb-4 overflow-y-auto bg-zinc-900 pl-4">
                 <div className="flex items-center space-x-16 text-gray-50 h-[80px]">

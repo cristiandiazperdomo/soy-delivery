@@ -1,6 +1,19 @@
 import React from "react";
+import {Order} from "../../redux/reducers/orders";
 
-export const CardOrder = () => {
+export const CardOrder = (order: Order) => {
+    const {
+        id,
+        productName,
+        customerId,
+        providerId,
+        driverId,
+        price,
+        payMethod,
+        status,
+        address,
+    } = order;
+
     return (
         <div className="border p-4 rounded-lg">
             <div className="flex justify-between font-normal text-sm">
@@ -10,12 +23,14 @@ export const CardOrder = () => {
                         name="checkbox"
                         className="w-5 h-5"
                     />
-                    <p className="text-primary font-semibold">#7X42VC</p>
+                    <p className="text-primary font-semibold uppercase">
+                        #{id}
+                    </p>
                     <p>-</p>
                     <p className="">Envío Express</p>
                 </div>
-                <button className="bg-gray-100 text-gray-500 rounded-lg px-2 py-1">
-                    Cancelado
+                <button className="capitalize bg-gray-100 text-gray-500 rounded-lg px-2 py-1">
+                    {status}
                 </button>
             </div>
             <div className="border-b-2 pt-4 border-dashed border-gray-100"></div>
@@ -29,9 +44,9 @@ export const CardOrder = () => {
                         />
                     </div>
                     <div className="mt-3 space-y-1">
-                        <p className="pb-1">M1 Apple 1.0 Pro</p>
+                        <p className="pb-1">{productName}</p>
                         <p className="text-gray-400 font-normal text-sm">
-                            1x $128.00
+                            1x ${price}.00
                         </p>
                         <p className="text-gray-400 font-normal text-sm">
                             x1 Otro Producto
@@ -39,7 +54,7 @@ export const CardOrder = () => {
                     </div>
                 </div>
                 <div className="pt-4">
-                    <p className="text-2xl font-normal">$183.00</p>
+                    <p className="text-2xl font-normal">${price}.00</p>
                 </div>
             </div>
             <div className="grid grid-cols-3">
@@ -47,15 +62,15 @@ export const CardOrder = () => {
                     <p className="text-gray-400 font-normal text-sm">
                         Orden iniciada
                     </p>
-                    <p>26 septiembre 2023</p>
+                    <p className="truncate">26 septiembre 2023</p>
                 </div>
                 <div>
                     <p className="text-gray-400 font-normal text-sm">Cliente</p>
-                    <p>Cristian Díaz</p>
+                    <p className="truncate">{customerId}</p>
                 </div>
                 <div>
                     <p className="text-gray-400 font-normal text-sm">Pago</p>
-                    <p>Mercado Pago</p>
+                    <p className="capitalize truncate">{payMethod}</p>
                 </div>
             </div>
         </div>

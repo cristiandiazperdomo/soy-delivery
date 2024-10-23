@@ -5,12 +5,9 @@ import packing from "../../assets/packing.mp4";
 import {AuthVideoHover} from "../../components/AuthVideoHover/AuthVideoHover";
 import {useAppDispatch} from "../../hooks/reduxTypes";
 import {loginAction} from "../../redux/actions/userInfo";
+import {LoginFormData} from "../../interfaces/LoginFormData";
 
-export interface LoginFormData {
-    email: string;
-    password: string;
-    [key: string]: string;
-}
+
 
 export const Login = () => {
     const [formData, setFormData] = useState<LoginFormData>({

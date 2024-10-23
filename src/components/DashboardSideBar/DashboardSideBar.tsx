@@ -11,7 +11,7 @@ export const DashboardSideBar = () => {
     return (
         <aside
             id="cta-button-sidebar"
-            className={`text-gray-800 absolute sm:fixed top-0 left-0 z-40 w-64 bottom-0 transition-transform duration-500 border-r-2 border-gray-100 ${
+            className={`text-gray-800 absolute sm:fixed top-0 left-0 z-10 w-64 bottom-0 transition-transform duration-500 border-r-2 border-gray-100 ${
                 isSideBarActive ? "translate-x-0" : "-translate-x-full"
             }`}
             aria-label="Sidebar"

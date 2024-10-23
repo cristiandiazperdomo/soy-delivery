@@ -1,0 +1,2 @@
+export const ACTIVE_LOADER = "ACTIVE_LOADER";
+export const DESACTIVE_LOADER = "DESACTIVE_LOADER";

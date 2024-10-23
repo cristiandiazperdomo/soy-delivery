@@ -6,7 +6,8 @@ import {AboutUs} from "./pages/AboutUs/AboutUs";
 import {Services} from "./pages/Services/Services";
 import {Login} from "./pages/Login/Login";
 import {SignUp} from "./pages/SignUp/SignUp";
-import {AdminDelivery} from "./pages/AdminDelivery/AdminDelivery";
+import {DashboardDelivery} from "./pages/DashboardDelivery/DashboardDelivery";
+import {TrackOrder} from "./pages/TrackOrder/TrackOrder";
 
 function App() {
     return (
@@ -17,7 +18,14 @@ function App() {
                 <Route path="/servicios" element={<Services />}></Route>
                 <Route path="/entrar" element={<Login />}></Route>
                 <Route path="/registrarse" element={<SignUp />}></Route>
-                <Route path="/dashboard" element={<AdminDelivery />}></Route>
+                <Route
+                    path="/rastrear-orden/:id"
+                    element={<TrackOrder />}
+                ></Route>
+                <Route
+                    path="/dashboard"
+                    element={<DashboardDelivery />}
+                ></Route>
             </Routes>
         </BrowserRouter>
     );

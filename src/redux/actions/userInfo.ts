@@ -1,33 +1,41 @@
 import {NavigateFunction} from "react-router-dom";
-import {LoginFormData} from "../../pages/Login/Login";
 import {SET_USER_INFO} from "../constants/userInfo";
-import {UserInfo} from "../reducers/userInfo";
+import {Dispatch} from "redux";
+import {UserInfo} from "../../interfaces/userInfo";
+import {LoginFormData} from "../../interfaces/LoginFormData";
 
 export const registerActionSuccess = (data: UserInfo) => ({
     type: SET_USER_INFO,
     payload: data,
 });
 
-export const registerAction = (formData: any, navigate: NavigateFunction) => {
-    return async (dispatch: any) => {
-        const response = await fetch(
-            "http://localhost:3000/api/auth/register",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            }
-        );
+export const registerAction = (
+    formData: LoginFormData,
+    navigate: NavigateFunction
+) => {
+    return async (dispatch: Dispatch) => {
+        try {
+            const response = await fetch(
+                "http://localhost:3000/api/auth/register",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                }
+            );
 
-        const data = await response.json();
+            const data = await response.json();
 
-        localStorage.setItem("sd_token", data.token);
+            localStorage.setItem("sd_token", data.token);
 
-        dispatch(registerActionSuccess(data));
+            dispatch(registerActionSuccess(data));
 
-        navigate("/");
+            navigate("/dashboard");
+        } catch (error) {
+            if (error instanceof Error) console.error(error.message);
+        }
     };
 };
 
@@ -40,7 +48,7 @@ export const loginAction = (
     formData: LoginFormData,
     navigate: NavigateFunction
 ) => {
-    return async (dispatch: any) => {
+    return async (dispatch: Dispatch) => {
         try {
             const response = await fetch(
                 "http://localhost:3000/api/auth/login",
@@ -62,7 +70,7 @@ export const loginAction = (
 
             localStorage.setItem("sd_token", data.token);
 
-            navigate("/");
+            navigate("/dashboard");
         } catch (error) {
             if (error instanceof Error) console.error(error.message);
         }
@@ -75,7 +83,7 @@ export const getUserFromTokenActionSuccess = (data: UserInfo) => ({
 });
 
 export const getUserFromTokenAction = (token: string) => {
-    return async (dispatch: any) => {
+    return async (dispatch: Dispatch) => {
         try {
             const response = await fetch(
                 "http://localhost:3000/api/auth/jwt/valid-token",
@@ -95,7 +103,7 @@ export const getUserFromTokenAction = (token: string) => {
                 })
             );
         } catch (error) {
-            if (error instanceof Error) console.log(error);
+            if (error instanceof Error) console.error(error);
         }
     };
 };
