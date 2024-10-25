@@ -26,7 +26,7 @@ export const SideBar = ({showSideBar, pathname}: SideBarProps) => {
                         <li>
                             <Link
                                 to="/"
-                                className={`text-sm cursor-pointer flex items-center space-x-0   ${
+                                className={`text-sm cursor-pointer flex items-center space-x-0 ${
                                     pathname === "/"
                                         ? "text-primary hover:text-primary"
                                         : ""

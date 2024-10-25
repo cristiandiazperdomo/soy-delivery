@@ -1,5 +1,5 @@
 import React from "react";
-import {Order} from "../../redux/reducers/orders";
+import {Order} from "../../interfaces/Order";
 
 export const CardOrder = (order: Order) => {
     const {
@@ -23,13 +23,13 @@ export const CardOrder = (order: Order) => {
                         name="checkbox"
                         className="w-5 h-5"
                     />
-                    <p className="text-primary font-semibold uppercase">
+                    <p className="text-primary font-semibold uppercase text-xs lg:text-[16px]">
                         #{id}
                     </p>
                     <p>-</p>
-                    <p className="">Envío Express</p>
+                    <p className="text-xs lg:text-[16px]">Envío Express</p>
                 </div>
-                <button className="capitalize bg-gray-100 text-gray-500 rounded-lg px-2 py-1">
+                <button className="capitalize bg-gray-100 text-gray-500 rounded-lg px-2 py-1 text-xs lg:text-[16px]">
                     {status}
                 </button>
             </div>
@@ -39,30 +39,38 @@ export const CardOrder = (order: Order) => {
                     <div className="flex justify-center w-[120px] h-[120px]">
                         <img
                             src="https://larifamos-redesign.web.app/assets/computer-nobg-uorLI1XZ.png"
-                            className="w-[100px] h-[100px]"
+                            className="w-auto min-h-[100px]"
                             alt="computer"
                         />
                     </div>
                     <div className="mt-3 space-y-1">
-                        <p className="pb-1">{productName}</p>
-                        <p className="text-gray-400 font-normal text-sm">
-                            1x ${price}.00
+                        <p className="pb-1 text-xs sm:text-[16px]">
+                            {productName}
                         </p>
                         <p className="text-gray-400 font-normal text-sm">
+                            1x ${price}
+                        </p>
+                        <p className="hidden lg:flex text-gray-400 font-normal text-sm">
                             x1 Otro Producto
                         </p>
                     </div>
                 </div>
                 <div className="pt-4">
-                    <p className="text-2xl font-normal">${price}.00</p>
+                    <p className="text-xl lg:text-2xl font-normal">${price}</p>
                 </div>
             </div>
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-3 gap-x-1">
                 <div>
-                    <p className="text-gray-400 font-normal text-sm">
-                        Orden iniciada
+                    <p className="flex text-gray-400 font-normal text-sm space-x-1">
+                        <span className="hidden lg:flex">Orden</span>
+                        <span>Iniciada</span>
                     </p>
-                    <p className="truncate">26 septiembre 2023</p>
+                    <p className="truncate flex space-x-0.5">
+                        <span>26</span>
+                        <span className="flex xl:hidden">Sep</span>
+                        <span className="hidden xl:flex">Septiembre</span>{" "}
+                        <span>2023</span>
+                    </p>
                 </div>
                 <div>
                     <p className="text-gray-400 font-normal text-sm">Cliente</p>

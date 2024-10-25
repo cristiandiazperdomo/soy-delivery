@@ -17,15 +17,16 @@ interface BaseOrder {
     price: number;
     status: (typeof Status)[number];
     payMethod: (typeof PayMethod)[number];
-    customerName: string;
 }
 
 export interface Order extends BaseOrder {
+    customerId: string;
     providerId: string;
     driverId: string;
 }
 
 export interface OrderSearch extends BaseOrder {
+    customerName: string;
     providerName: string;
     driverName: string;
 };

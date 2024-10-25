@@ -35,7 +35,7 @@ export const TrackOrder = ({
                     className="fixed left-0 top-0 w-screen h-screen bg-black bg-opacity-50"
                     onClick={() => setShowTrackOrder(false)}
                 ></div>
-                <aside className="fixed right-0 top-0 h-screen font-semibold text-gray-700 bg-white w-[580px] z-50">
+                <aside className="fixed right-0 top-0 h-screen font-semibold text-gray-700 bg-white w-[320px] sm:w-[580px] z-50">
                     <div className="flex flex-col">
                         <div className="space-y-8 px-4 pt-10">
                             <div className="flex justify-between">
@@ -187,7 +187,7 @@ export const TrackOrder = ({
                                                         <path d="M6 9l6 6l6 -6" />
                                                     </svg>
                                                 </summary>
-                                                <p className="text-gray-500 mt-2 text-sm mt-4">
+                                                <div className="text-gray-500 mt-2 text-sm mt-4">
                                                     {[29, 28, 27].map(
                                                         (num, index) => (
                                                             <div
@@ -249,7 +249,7 @@ export const TrackOrder = ({
                                                             </div>
                                                         )
                                                     )}
-                                                </p>
+                                                </div>
                                             </details>
                                         </li>
                                         <li className="text-black space-y-2 border-b-2">
