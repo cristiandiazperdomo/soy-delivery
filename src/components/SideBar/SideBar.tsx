@@ -28,7 +28,7 @@ export const SideBar = ({showSideBar, pathname}: SideBarProps) => {
                                 to="/"
                                 className={`text-sm cursor-pointer flex items-center space-x-0   ${
                                     pathname === "/"
-                                        ? "text-orange-600 hover:text-orange-600"
+                                        ? "text-primary hover:text-primary"
                                         : ""
                                 }`}
                             >
@@ -57,7 +57,7 @@ export const SideBar = ({showSideBar, pathname}: SideBarProps) => {
                                 to="/sobre-nosotros"
                                 className={` ${
                                     pathname === "/sobre-nosotros"
-                                        ? "text-orange-600 hover:text-orange-600"
+                                        ? "text-primary hover:text-primary"
                                         : ""
                                 } text-sm  cursor-pointer flex items-center space-x-0`}
                             >
@@ -87,7 +87,7 @@ export const SideBar = ({showSideBar, pathname}: SideBarProps) => {
                                 to="/servicios"
                                 className={` ${
                                     pathname === "/servicios"
-                                        ? "text-orange-600 hover:text-orange-600"
+                                        ? "text-primary hover:text-primary"
                                         : ""
                                 } text-sm cursor-pointer flex items-center space-x-0`}
                             >

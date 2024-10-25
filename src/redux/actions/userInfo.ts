@@ -16,7 +16,7 @@ export const registerAction = (
     return async (dispatch: Dispatch) => {
         try {
             const response = await fetch(
-                "http://localhost:3000/api/auth/register",
+                import.meta.env.VITE_DB_BASEURL + "/auth/register",
                 {
                     method: "POST",
                     headers: {
@@ -51,7 +51,7 @@ export const loginAction = (
     return async (dispatch: Dispatch) => {
         try {
             const response = await fetch(
-                "http://localhost:3000/api/auth/login",
+                import.meta.env.VITE_DB_BASEURL + "/auth/login",
                 {
                     method: "POST",
                     headers: {
@@ -86,7 +86,7 @@ export const getUserFromTokenAction = (token: string) => {
     return async (dispatch: Dispatch) => {
         try {
             const response = await fetch(
-                "http://localhost:3000/api/auth/jwt/valid-token",
+                import.meta.env.VITE_DB_BASEURL + "/auth/jwt/valid-token",
                 {
                     headers: {
                         Authorization: "Bearer " + token,

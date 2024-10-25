@@ -10,6 +10,7 @@ export const Faq = () => {
             <div className="flex flex-wrap sm:flex-no-wrap justify-center space-x-4">
                 {listOfCategories.map((category) => (
                     <button
+                        key={category}
                         onClick={() => setSelectedCategory(category)}
                         className={`transition-all duration-700 bg-opacity-0 p-3 rounded-xl ${
                             selectedCategory === category
@@ -23,7 +24,10 @@ export const Faq = () => {
             </div>
             <ul className="">
                 {categories[selectedCategory].map((cat: any) => (
-                    <li className="text-black space-y-2 border-b-2">
+                    <li
+                        className="text-black space-y-2 border-b-2"
+                        key={cat.title}
+                    >
                         <details className="border-gray-100 p-4">
                             <summary className="flex justify-between text-md">
                                 <span className="text-xl font-semibold">

@@ -34,9 +34,9 @@ export const DashboardDelivery = () => {
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
-                                stroke-width="3"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right w-4 h-4"
                             >
                                 <path
@@ -56,8 +56,11 @@ export const DashboardDelivery = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-4 gap-x-4">
-                        {[1, 2, 3, 4].map(() => (
-                            <button className="bg-primary/[5%] pt-8 pb-12 px-4 border border-primary/30 rounded-lg">
+                        {[1, 2, 3, 4].map((num) => (
+                            <button
+                                className="bg-primary/[5%] pt-8 pb-12 px-4 border border-primary/30 rounded-lg"
+                                key={num}
+                            >
                                 <header>
                                     <p className="text-gray-400">
                                         Entregas hoy
@@ -81,6 +84,7 @@ export const DashboardDelivery = () => {
                                 ["Reembolso / Reportado", "refund-reported"],
                             ].map((availableStatus) => (
                                 <p
+                                    key={availableStatus[0]}
                                     className={`${
                                         availableStatus[1] === status
                                             ? "border-b-4 border-primary"
@@ -97,6 +101,7 @@ export const DashboardDelivery = () => {
                         <div className="grid grid-cols-3 gap-8 mt-8">
                             {orders.map((order: any) => (
                                 <CardOrder
+                                    key={order.id}
                                     id={order.id}
                                     productName={order.productName}
                                     customerId={order.customerId}

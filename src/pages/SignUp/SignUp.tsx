@@ -65,7 +65,7 @@ export const SignUp = () => {
             <div className="flex flex-col items-center justify-center px-2 sm:px-6 xl:px-20 py-8 h-screen lg:py-0 w-full md:w-auto">
                 <div className="rounded-lg md:mt-0 xl:p-0 w-full md:w-[480px]">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1 className="text-2xl font-bold text-orange-950 leading-tight tracking-tight text-gray-900">
+                        <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900">
                             Entra a SoyDelivery
                         </h1>
                         <form

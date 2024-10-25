@@ -10,23 +10,22 @@ export const Status = [
 
 export const PayMethod = ["cash", "card"] as const;
 
-export interface Order {
+interface BaseOrder {
     id: string;
     productName: string;
-    customerName: string;
-    providerId: string;
-    driverId: string;
-    price: number;
-    payMethod: (typeof PayMethod)[number];
-    status: (typeof Status)[number];
     address: string;
+    price: number;
+    status: (typeof Status)[number];
+    payMethod: (typeof PayMethod)[number];
+    customerName: string;
 }
 
-export type OrderSearch = Pick<
-    Order,
-    "id" | "productName" | "address" | "price" | "status" | "payMethod"
-> & {
-    customerName: string;
+export interface Order extends BaseOrder {
+    providerId: string;
+    driverId: string;
+}
+
+export interface OrderSearch extends BaseOrder {
     providerName: string;
     driverName: string;
 };

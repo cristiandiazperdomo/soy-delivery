@@ -99,7 +99,7 @@ export const TrackOrder = ({
                                         "En Progreso",
                                         "Entregado",
                                     ].map((status, index) => (
-                                        <div className="space-y-2">
+                                        <div className="space-y-2" key={index}>
                                             <div
                                                 className={`flex items-center ${
                                                     index === 3
@@ -190,7 +190,10 @@ export const TrackOrder = ({
                                                 <p className="text-gray-500 mt-2 text-sm mt-4">
                                                     {[29, 28, 27].map(
                                                         (num, index) => (
-                                                            <div className="space-x-2 bg-white">
+                                                            <div
+                                                                className="space-x-2 bg-white"
+                                                                key={num}
+                                                            >
                                                                 <div className="flex items-start space-x-2">
                                                                     <div>
                                                                         <div className="p-1 bg-gray-100 rounded-full">
@@ -279,7 +282,7 @@ export const TrackOrder = ({
                                                 <ul className="text-gray-500 mt-2 text-sm space-y-1">
                                                     <li className="flex space-x-2 capitalize">
                                                         <span className="text-gray-500">
-                                                            Dirección:
+                                                            Provedor:
                                                         </span>
 
                                                         <span className="text-gray-800">

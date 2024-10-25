@@ -15,13 +15,16 @@ export const TrustUs = () => {
                     </h4>
                 </div>
                 <div className="grid grid-cols-2 justify-items-center  items-center  gap-12 md:grid-cols-3  xl:grid-cols-none xl:flex xl:justify-between">
-                    {[tata, bas, joacamar, woow, tiendainglesa].map((img) => (
-                        <img
-                            src={img}
-                            className="w-[120px] grayscale opacity-60"
-                            alt="marca"
-                        />
-                    ))}
+                    {[tata, bas, joacamar, woow, tiendainglesa].map(
+                        (img, index) => (
+                            <img
+                                key={index}
+                                src={img}
+                                className="w-[120px] grayscale opacity-60"
+                                alt="marca"
+                            />
+                        )
+                    )}
                 </div>
             </div>
         </section>

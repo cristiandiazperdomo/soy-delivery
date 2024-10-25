@@ -9,7 +9,7 @@ export const getOrdersSuccess = (data: Order[]) => ({
 
 export const getOrders = (status: string) => {
     return async (dispatch: Dispatch) => {
-        const baseUrl = "http://localhost:3000/api/orders";
+        const baseUrl = import.meta.env.VITE_DB_BASEURL + "/orders";
         const url = status === "all" ? baseUrl : baseUrl + "/status/" + status;
 
         try {

@@ -19,7 +19,9 @@ export const findOrderById = (
             dispatch(
                 findOrderByIdSuccess(
                     await (
-                        await fetch("http://localhost:3000/api/orders/" + id)
+                        await fetch(
+                            import.meta.env.VITE_DB_BASEURL + "/orders/" + id
+                        )
                     ).json()
                 )
             );

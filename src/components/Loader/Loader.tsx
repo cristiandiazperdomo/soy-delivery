@@ -17,9 +17,9 @@ export const Loader = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-loader-3 animate-spin text-white"
             >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />

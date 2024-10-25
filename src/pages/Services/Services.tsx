@@ -88,7 +88,7 @@ export const Services = () => {
                     </div>
                     <div className="py-20 text-center">
                         <div className="container mx-auto space-y-4">
-                            <p className="space-x-1.5 text-xs tracking-tight font-bold text-orange-500">
+                            <p className="space-x-1.5 text-xs tracking-tight font-bold text-primary">
                                 <span>¿ P O R Q U É </span>
                                 <span>E L E G I R</span>
                                 <span>S O Y</span>
@@ -111,9 +111,9 @@ export const Services = () => {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         className="icon icon-tabler icons-tabler-outline icon-tabler-package w-[48px] h-[48px]"
                                         style={{color: "#001F3F"}}
                                     >
@@ -158,9 +158,9 @@ export const Services = () => {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         className="icon icon-tabler icons-tabler-outline icon-tabler-package w-[48px] h-[48px] text-gray-400"
                                     >
                                         <path
@@ -199,9 +199,9 @@ export const Services = () => {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         className="icon icon-tabler icons-tabler-outline icon-tabler-package w-[48px] h-[48px] text-gray-400"
                                     >
                                         <path
@@ -240,9 +240,9 @@ export const Services = () => {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         className="icon icon-tabler icons-tabler-outline icon-tabler-package w-[48px] h-[48px] text-gray-400"
                                     >
                                         <path

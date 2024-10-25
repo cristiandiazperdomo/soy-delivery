@@ -15,7 +15,7 @@ export const AboutUs = () => {
                         <div className="sm:mx-8 space-y-8 xl:space-y-32">
                             <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-12">
                                 <div className="w-full h-full space-y-8 mt-0 xl:mt-12 2xl:mt-20">
-                                    <span className="hidden lg:inline border-2 border-orange-500 rounded-xl w-full px-4 font-semibold py-2 text-xs xl:text-sm text-orange-600 ">
+                                    <span className="hidden lg:inline border-2 border-primary rounded-xl w-full px-4 font-semibold py-2 text-xs xl:text-sm text-primary ">
                                         IMPULSANDO EL COMERCIO
                                     </span>
                                     <p className="w-full text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
@@ -83,9 +83,9 @@ export const AboutUs = () => {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-500"
                                     >
                                         <path
@@ -103,7 +103,7 @@ export const AboutUs = () => {
                                     alt="CEO de SoyDelivery"
                                     className="w-full sm:w-[580px] rounded-3xl"
                                 />
-                                <div className="absolute bottom-0 text-white px-4 pb-6 bg-gradient-to-t from-orange-700 to-transparent w-full rounded-3xl">
+                                <div className="absolute bottom-0 text-white px-4 pb-6 bg-gradient-to-t from-primary to-transparent w-full rounded-3xl">
                                     <div className="flex space-x-2 text-xs mb-4">
                                         <p className="font-semibold">
                                             Negocios
@@ -127,9 +127,9 @@ export const AboutUs = () => {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         className="icon icon-tabler icons-tabler-outline icon-tabler-external-link"
                                     >
                                         <path
@@ -161,11 +161,14 @@ export const AboutUs = () => {
                                         url: "https://imgs.elpais.com.uy/dims4/default/fc7ec53/2147483647/strip/true/crop/1939x1333+61+0/resize/1440x990!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F8a%2F59%2Fec6f0a394ef6ab776880657b6f56%2Fimagen-nia1880.jpg",
                                         title: `SoyDelivery otorga equipamiento y formación adecuada en seguridad y salud laboral, y el diseño de un protocolo específico`,
                                     },
-                                ].map((el) => (
-                                    <div className="min-h-[100px] flex flex-col-reverse sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pb-2">
+                                ].map((el, index) => (
+                                    <div
+                                        className="min-h-[100px] flex flex-col-reverse sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pb-2"
+                                        key={index}
+                                    >
                                         <div className="space-y-2 sm:space-y-4 mt-2 sm:mt-0">
                                             <div className="flex space-x-2 text-gray-500 text-xs">
-                                                <p className="text-orange-500 font-semibold">
+                                                <p className="text-primary font-semibold">
                                                     Equipo
                                                 </p>
                                                 <p className="text-gray-600">
