@@ -3,7 +3,7 @@ import userProfile from "../../assets/profile.webp";
 import {getUserFromTokenAction} from "../../redux/actions/userInfo";
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxTypes";
 import {Notifications} from "../Notifications/Notifications";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 interface UserDropdownInterface {
     emailHeader: string | null;
@@ -15,12 +15,13 @@ export const UserDropdown = ({emailHeader}: UserDropdownInterface) => {
     let email: string =
         emailHeader || useAppSelector((state) => state.user.info?.data.email);
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem("sd_token");
 
         if (token && !email) {
-            dispatch(getUserFromTokenAction(token));
+            dispatch(getUserFromTokenAction(token, navigate));
         }
     }, []);
 
@@ -67,7 +68,7 @@ export const UserDropdown = ({emailHeader}: UserDropdownInterface) => {
                     } bg-white divide-y divide-gray-100 rounded-lg shadow w-52 mt-2`}
                 >
                     <div className="px-4 py-3 text-sm text-gray-900">
-                        <div>{email.substring(0, email.indexOf("@"))}</div>
+                        <div>{email?.substring(0, email.indexOf("@"))}</div>
                         <div className="font-medium truncate">{email}</div>
                     </div>
                     <ul className="py-2 text-sm text-gray-700">

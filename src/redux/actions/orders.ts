@@ -1,7 +1,6 @@
 import {Dispatch} from "redux";
 import {SET_ORDERS} from "../constants/orders";
 import {Order} from "../../interfaces/Order";
-import {NavigateFunction} from "react-router-dom";
 
 export const getOrdersSuccess = (data: Order[]) => ({
     type: SET_ORDERS,
