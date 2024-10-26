@@ -99,9 +99,6 @@ export const getUserFromTokenAction = (
 
             const data = await response.json();
 
-            console.log("god hates me");
-            console.log(data.message.length > 0);
-            console.log(Boolean(navigate));
             if (data.message.length > 0 && navigate) {
                 navigate("/entrar");
                 console.error(data.message);
