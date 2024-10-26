@@ -5,6 +5,7 @@ import {getOrders} from "../../redux/actions/orders";
 import {DashboardHeader} from "../../components/DashboardHeader/DashboardHeader";
 import {TrackOrder} from "../../components/TrackOrder/TrackOrder";
 import {Loader} from "../../components/Loader/Loader";
+import {useNavigate} from "react-router-dom";
 
 export const DashboardDelivery = () => {
     const [status, setStatus] = useState("all");
@@ -13,8 +14,15 @@ export const DashboardDelivery = () => {
     const dispatch = useAppDispatch();
     const orders = useAppSelector((state) => state.orders);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
-        dispatch(getOrders(status));
+        const token = localStorage.getItem("sd_token");
+        if (!token) {
+            navigate("/entrar");
+        } else {
+            dispatch(getOrders(status, token));
+        }
     }, [status]);
 
     return (
@@ -23,26 +31,6 @@ export const DashboardDelivery = () => {
             <div className="relative flex flex-col w-full lg:pl-[257px]">
                 <DashboardHeader setShowTrackOrder={setShowTrackOrder} />
                 <div className="h-screen w-full space-y-8 px-4 mb-96">
-                    {/* <div className="">
-                        <h2 className="text-3xl">Estados de Entregas</h2>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-4 lg:gap-y-0 gap-x-4">
-                        {[1, 2, 3, 4].map((num) => (
-                            <button
-                                className="bg-primary/[5%] pt-8 pb-12 px-4 border border-primary/30 rounded-lg"
-                                key={num}
-                            >
-                                <header>
-                                    <p className="text-gray-400">
-                                        Entregas hoy
-                                    </p>
-                                </header>
-                                <div>
-                                    <p className="text-3xl">127 Entregas</p>
-                                </div>
-                            </button>
-                        ))}
-                    </div> */}
                     <div className="pt-10">
                         <h2 className="text-3xl">Reporte de Entregas</h2>
                         <div className="flex items-center text-gray-400 mt-2 mb-8">
@@ -102,9 +90,9 @@ export const DashboardDelivery = () => {
                                     key={order.id}
                                     id={order.id}
                                     productName={order.productName}
-                                    customerId={order.customerId}
-                                    providerId={order.providerId}
-                                    driverId={order.driverId}
+                                    customerName={order.customerName}
+                                    providerName={order.providerName}
+                                    driverName={order.driverName}
                                     price={order.price}
                                     payMethod={order.payMethod}
                                     status={order.status}

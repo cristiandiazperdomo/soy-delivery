@@ -3,6 +3,7 @@ import userProfile from "../../assets/profile.webp";
 import {getUserFromTokenAction} from "../../redux/actions/userInfo";
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxTypes";
 import {Notifications} from "../Notifications/Notifications";
+import {Link} from "react-router-dom";
 
 interface UserDropdownInterface {
     emailHeader: string | null;
@@ -70,21 +71,16 @@ export const UserDropdown = ({emailHeader}: UserDropdownInterface) => {
                         <div className="font-medium truncate">{email}</div>
                     </div>
                     <ul className="py-2 text-sm text-gray-700">
-                        <li className="flex items-center justify-between px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                            <a href="#" className="block">
-                                Ordenes
-                            </a>
-                            <div className="bg-red-600 flex items-center justify-center h-6 w-6 rounded-full text-white text-xs">
-                                1
-                            </div>
-                        </li>
-                        <li className="flex items-center justify-between px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                            <a href="#" className="block">
-                                Entregas
-                            </a>
-                            <div className="bg-green-500 flex items-center justify-center h-6 w-6 rounded-full text-white text-xs">
-                                15
-                            </div>
+                        <li>
+                            <Link
+                                to="/dashboard"
+                                className="flex flex-row items-center justify-between px-4 py-3 hover:bg-gray-100 cursor-pointer"
+                            >
+                                <span className="block">Ordenes</span>
+                                <span className="bg-red-600 flex items-center justify-center h-6 w-6 rounded-full text-white text-xs">
+                                    1
+                                </span>
+                            </Link>
                         </li>
                     </ul>
                     <div className="py-2">

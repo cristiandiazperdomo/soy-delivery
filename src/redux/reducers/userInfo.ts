@@ -1,4 +1,4 @@
-import {UserInfo} from "../../interfaces/userInfo";
+import {UserInfo} from "../../interfaces/UserInfo";
 import {GET_USER_INFO, SET_USER_INFO} from "../constants/userInfo";
 
 export const initialState: UserInfo = {

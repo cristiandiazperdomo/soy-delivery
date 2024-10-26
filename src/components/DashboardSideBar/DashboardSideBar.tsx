@@ -17,7 +17,7 @@ export const DashboardSideBar = ({
     return (
         <aside
             id="cta-button-sidebar"
-            className={`flex flex-col justify-between text-gray-800 fixed top-0 left-0 z-10 w-64 bottom-0 transition-transform duration-500 border-r-2 border-gray-100 bg-gray-50 pb-8 px-4 h-full ${
+            className={`flex flex-col justify-between text-gray-800 fixed top-0 left-0 z-50 w-64 bottom-0 transition-transform duration-500 border-r-2 border-gray-100 bg-gray-50 pb-8 px-4 h-full ${
                 showSideBar ? "translate-x-0" : "-translate-x-full"
             }`}
             aria-label="Sidebar"

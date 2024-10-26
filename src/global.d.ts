@@ -19,6 +19,6 @@ declare module "*.mp4" {
 }
 
 declare module "*.svg" {
-    const value: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    const value: string;
     export default value;
 }

@@ -1,7 +1,7 @@
-import {OrderSearch} from "../../interfaces/Order";
+import {Order} from "../../interfaces/Order";
 import {SET_SEARCH_RESULT} from "../constants/search";
 
-const initialState: OrderSearch = {
+const initialState: Order = {
     id: "",
     productName: "",
     price: 0,
@@ -15,7 +15,7 @@ const initialState: OrderSearch = {
 
 export const searchReducer = (
     state = initialState,
-    action: {type: string; payload?: OrderSearch | undefined}
+    action: {type: string; payload?: Order | undefined}
 ) => {
     switch (action.type) {
         case SET_SEARCH_RESULT: {

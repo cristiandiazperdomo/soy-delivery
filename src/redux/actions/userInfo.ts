@@ -1,7 +1,7 @@
 import {NavigateFunction} from "react-router-dom";
 import {SET_USER_INFO} from "../constants/userInfo";
 import {Dispatch} from "redux";
-import {UserInfo} from "../../interfaces/userInfo";
+import {UserInfo} from "../../interfaces/UserInfo";
 import {LoginFormData} from "../../interfaces/LoginFormData";
 
 export const registerActionSuccess = (data: UserInfo) => ({
@@ -66,9 +66,9 @@ export const loginAction = (
 
             const data = await response.json();
 
-            dispatch(loginActionSuccess(data));
-
             localStorage.setItem("sd_token", data.token);
+
+            dispatch(loginActionSuccess(data));
 
             navigate("/dashboard");
         } catch (error) {
@@ -82,7 +82,10 @@ export const getUserFromTokenActionSuccess = (data: UserInfo) => ({
     payload: data,
 });
 
-export const getUserFromTokenAction = (token: string) => {
+export const getUserFromTokenAction = (
+    token: string,
+    navigate?: NavigateFunction
+) => {
     return async (dispatch: Dispatch) => {
         try {
             const response = await fetch(
@@ -95,6 +98,11 @@ export const getUserFromTokenAction = (token: string) => {
             );
 
             const data = await response.json();
+
+            if (data.success === false && navigate) {
+                navigate("/entrar");
+                console.error(data.message);
+            }
 
             dispatch(
                 getUserFromTokenActionSuccess({

@@ -7,8 +7,6 @@ import {useAppDispatch} from "../../hooks/reduxTypes";
 import {loginAction} from "../../redux/actions/userInfo";
 import {LoginFormData} from "../../interfaces/LoginFormData";
 
-
-
 export const Login = () => {
     const [formData, setFormData] = useState<LoginFormData>({
         email: "",

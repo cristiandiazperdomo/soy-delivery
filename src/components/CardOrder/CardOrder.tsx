@@ -5,9 +5,9 @@ export const CardOrder = (order: Order) => {
     const {
         id,
         productName,
-        customerId,
-        providerId,
-        driverId,
+        customerName,
+        providerName,
+        driverName,
         price,
         payMethod,
         status,
@@ -65,20 +65,17 @@ export const CardOrder = (order: Order) => {
                         <span className="hidden lg:flex">Orden</span>
                         <span>Iniciada</span>
                     </p>
-                    <p className="truncate flex space-x-0.5">
-                        <span>26</span>
-                        <span className="flex xl:hidden">Sep</span>
-                        <span className="hidden xl:flex">Septiembre</span>{" "}
-                        <span>2023</span>
-                    </p>
+                    <p className="truncate flex space-x-0.5">26 Sep 2023</p>
                 </div>
                 <div>
                     <p className="text-gray-400 font-normal text-sm">Cliente</p>
-                    <p className="truncate">{customerId}</p>
+                    <p className="truncate">{customerName}</p>
                 </div>
                 <div>
                     <p className="text-gray-400 font-normal text-sm">Pago</p>
-                    <p className="capitalize truncate">{payMethod}</p>
+                    <p className="capitalize truncate">
+                        {payMethod === "card" ? "Tarjeta" : "Efectivo"}
+                    </p>
                 </div>
             </div>
         </div>
