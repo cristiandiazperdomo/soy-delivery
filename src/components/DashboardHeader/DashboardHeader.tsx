@@ -2,12 +2,15 @@ import React, {
     Dispatch,
     FormEventHandler,
     SetStateAction,
+    useEffect,
     useState,
 } from "react";
 import {UserDropdown} from "../UserDropdown/UserDropdown";
-import {useAppDispatch} from "../../hooks/reduxTypes";
+import {useAppDispatch, useAppSelector} from "../../hooks/reduxTypes";
 import {findOrderById} from "../../redux/actions/search";
 import {DashboardSideBar} from "../DashboardSideBar/DashboardSideBar";
+import {getUserFromTokenAction} from "../../redux/actions/userInfo";
+import {useNavigate} from "react-router-dom";
 
 interface DashboardHeaderProps {
     setShowTrackOrder: Dispatch<SetStateAction<boolean>>;
@@ -18,6 +21,9 @@ export const DashboardHeader = ({setShowTrackOrder}: DashboardHeaderProps) => {
     const [searchValue, setSearchValue] = useState("");
 
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
+    let email = useAppSelector((state) => state.user?.info?.data.email);
 
     const search: FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
@@ -25,6 +31,14 @@ export const DashboardHeader = ({setShowTrackOrder}: DashboardHeaderProps) => {
             findOrderById(searchValue.replace("#", ""), setShowTrackOrder)
         );
     };
+
+    useEffect(() => {
+        const token = localStorage.getItem("sd_token");
+
+        if (token && !email) {
+            dispatch(getUserFromTokenAction(token, navigate));
+        }
+    }, []);
 
     return (
         <>
@@ -93,7 +107,7 @@ export const DashboardHeader = ({setShowTrackOrder}: DashboardHeaderProps) => {
                             <path d="M4 18l16 0" />
                         </svg>
                         <div className="hover:text-gray-800">
-                            <UserDropdown emailHeader={null} />
+                            <UserDropdown email={email} />
                         </div>
                     </div>
                 </div>

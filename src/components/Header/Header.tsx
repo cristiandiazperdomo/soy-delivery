@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {SideBar} from "../SideBar/SideBar";
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxTypes";
 
@@ -13,7 +13,7 @@ export const Header = () => {
     const [lightHover, setLightHover] = useState(false);
     const dispatch = useAppDispatch();
 
-    let {email} = useAppSelector((state) => state.user.info?.data);
+    let email = useAppSelector((state) => state.user?.info?.data.email);
 
     const {pathname} = useLocation();
 
@@ -25,7 +25,6 @@ export const Header = () => {
 
     useEffect(() => {
         const token = localStorage.getItem("sd_token");
-
         if (token && !email) {
             dispatch(getUserFromTokenAction(token));
         }
@@ -232,9 +231,9 @@ export const Header = () => {
                         <path d="M4 12l16 0" />
                         <path d="M4 18l16 0" />
                     </svg>
-                    {email?.length > 0 ? (
+                    {email && email?.length > 0 ? (
                         <div className="flex justify-end lg:w-[180px]">
-                            <UserDropdown emailHeader={email} />
+                            <UserDropdown email={email} />
                         </div>
                     ) : (
                         <div className="hidden md:flex justify-end lg:w-[245px] space-x-2 lg:space-x-4">

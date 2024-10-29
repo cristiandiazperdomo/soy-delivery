@@ -99,9 +99,9 @@ export const getUserFromTokenAction = (
 
             const data = await response.json();
 
-            if (data.message.length > 0 && navigate) {
-                navigate("/entrar");
+            if (data?.message?.length > 0 && navigate) {
                 console.error(data.message);
+                navigate("/entrar");
             }
 
             dispatch(
@@ -110,8 +110,10 @@ export const getUserFromTokenAction = (
                     info: data.info,
                 })
             );
-        } catch (error) {
+        } catch (error: any) {
             if (error instanceof Error) console.error(error);
+            const protectedRoute: string[] = ["/dashboard"];
+            if (navigate && protectedRoute.includes(window.location.pathname)) navigate("/")
         }
     };
 };

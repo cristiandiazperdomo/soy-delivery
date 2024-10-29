@@ -1,7 +1,6 @@
 import {Dispatch} from "redux";
 import {SET_ORDERS} from "../constants/orders";
 import {Order} from "../../interfaces/Order";
-import {NavigateFunction} from "react-router-dom";
 
 export const getOrdersSuccess = (data: Order[]) => ({
     type: SET_ORDERS,
@@ -22,6 +21,8 @@ export const getOrders = (status: string, token: string) => {
                 },
             });
             const data = await response.json();
+
+            if (!Array.isArray(data)) return;
 
             dispatch(getOrdersSuccess(data));
         } catch (error) {

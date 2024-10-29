@@ -6,6 +6,7 @@ import {DashboardHeader} from "../../components/DashboardHeader/DashboardHeader"
 import {TrackOrder} from "../../components/TrackOrder/TrackOrder";
 import {Loader} from "../../components/Loader/Loader";
 import {useNavigate} from "react-router-dom";
+import {Order} from "../../interfaces/Order";
 
 export const DashboardDelivery = () => {
     const [status, setStatus] = useState("all");
@@ -85,7 +86,7 @@ export const DashboardDelivery = () => {
                             ))}
                         </ul>
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 mt-8">
-                            {orders.map((order: any) => (
+                            {orders.map((order: Order) => (
                                 <CardOrder
                                     key={order.id}
                                     id={order.id}
