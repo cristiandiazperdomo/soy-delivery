@@ -7,22 +7,22 @@ export const Faq = () => {
     const [selectedCategory, setSelectedCategory] = useState("Tecnología");
     return (
         <div className="space-y-4 pt-8 pb-12">
-            <div className="flex flex-wrap sm:flex-no-wrap justify-center space-x-4">
+            <div className="flex flex-wrap sm:flex-no-wrap justify-center gap-4 pb-4">
                 {listOfCategories.map((category) => (
                     <button
                         key={category}
                         onClick={() => setSelectedCategory(category)}
-                        className={`transition-all duration-700 bg-opacity-0 p-3 rounded-xl ${
+                        className={`transition-all duration-300 bg-opacity-0 p-3 rounded-xl ${
                             selectedCategory === category
-                                ? "bg-gray-100 bg-opacity-100"
-                                : ""
+                                ? "border border-primary bg-primary text-white bg-opacity-100"
+                                : "border"
                         } `}
                     >
                         {category}
                     </button>
                 ))}
             </div>
-            <ul className="">
+            <ul className="max-w-2xl mx-auto">
                 {categories[selectedCategory].map((cat: any) => (
                     <li
                         className="text-black space-y-2 border-b-2"

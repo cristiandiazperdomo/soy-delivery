@@ -7,12 +7,14 @@ import {Services} from "./pages/Services/Services";
 import {Login} from "./pages/Login/Login";
 import {SignUp} from "./pages/SignUp/SignUp";
 import {DashboardDelivery} from "./pages/DashboardDelivery/DashboardDelivery";
+import {NewHome} from "./pages/NewHome/NewHome";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
+                <Route path="/new" element={<NewHome />}></Route>
                 <Route path="/sobre-nosotros" element={<AboutUs />}></Route>
                 <Route path="/servicios" element={<Services />}></Route>
                 <Route path="/entrar" element={<Login />}></Route>
