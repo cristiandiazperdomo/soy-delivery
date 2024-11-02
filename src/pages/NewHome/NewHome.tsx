@@ -213,11 +213,13 @@ export const NewHome = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="max-w-3xl mx-auto">
+                    <div className="max-w-3xl mx-auto pb-[80px]">
                         <TrustUs />
                     </div>
 
-                    <div className="max-w-7xl mx-auto py-[100px]">
+                    <div className="border-b border-gray-100 max-w-7xl mx-auto"></div>
+
+                    <div className="max-w-7xl mx-auto py-[80px]">
                         <p className="space-x-1.5 mb-3 text-xs text-center tracking-tight font-bold text-primary">
                             <span>¿ C Ó M O </span>
                             <span>F U N C I O N A ?</span>
@@ -235,7 +237,10 @@ export const NewHome = () => {
 
                         <Services />
                     </div>
-                    <div className="max-w-7xl mx-auto py-[100px]">
+
+                    <div className="border-b border-gray-100 max-w-7xl mx-auto"></div>
+
+                    <div className="max-w-7xl mx-auto py-[80px]">
                         <div className="mb-12">
                             <h2 className="text-4xl text-center font-semibold mb-2">
                                 ¿Qué dicen <br /> nuestros{" "}
@@ -266,7 +271,10 @@ export const NewHome = () => {
                         </div>
                         <ClientsOpinions />
                     </div>
-                    <div className="max-w-7xl mx-auto py-[100px]">
+
+                    <div className="border-b border-gray-100 max-w-7xl mx-auto"></div>
+
+                    <div className="max-w-7xl mx-auto py-[80px]">
                         <div className="mb-12">
                             <h2 className="text-4xl text-center font-semibold mb-2">
                                 Preguntas{" "}
